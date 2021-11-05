@@ -1,11 +1,18 @@
 import React from "react";
+import { NavBar } from "../Components";
+import styled from "styled-components";
 
 function Home() {
   return (
-    <div>
-      <h1>home</h1>
-    </div>
+    <Wrapper>
+      <NavBar />
+    </Wrapper>
   );
 }
 
 export default Home;
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  width: 100%;
+`;

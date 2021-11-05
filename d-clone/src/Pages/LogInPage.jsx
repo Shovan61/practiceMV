@@ -22,9 +22,10 @@ function LogInPage() {
           <img src={imgTwo} alt="imgTwo" />
         </SecondImage>
       </Content>
+
+      <Login>LOG IN</Login>
     </Wrapper>
   );
-  //   return <div className="wrpper"></div>;
 }
 
 export default LogInPage;
@@ -76,13 +77,21 @@ const Button = styled.div`
   justify-content: center;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.25s ease-in;
+  transition: hover 0.25s ease-in;
+
   &:hover {
     background-color: #0967ff;
   }
   & span {
     font-size: 18px;
     letter-spacing: 2px;
+  }
+  &:active {
+    transform: scale(0.995);
+    background-color: #0967ff8b;
+    & span {
+      font-size: 17px;
+    }
   }
 `;
 
@@ -97,6 +106,23 @@ const Span = styled.span`
 const SecondImage = styled.div`
   margin-top: 3rem;
   & img {
-    width: 150%;
+    height: 2.2vw;
+  }
+`;
+
+const Login = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #161638c3;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0.5px solid white;
+  transition: all 0.05s ease-in;
+  &:hover {
+    background-color: #ddddf5c3;
+    color: black;
+    border: none;
   }
 `;
