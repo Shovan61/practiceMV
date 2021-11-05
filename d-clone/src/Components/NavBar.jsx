@@ -95,6 +95,7 @@ const Profile = styled.div`
   align-items: center;
   justify-content: center;
   & img {
+    margin-top: 0.5rem;
     border-radius: 50%;
     height: 50%;
   }
