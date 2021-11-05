@@ -50,5 +50,9 @@ const Container = styled.div`
     width: 100vw;
     -webkit-box-shadow: 2px 19px 6px -6px rgba(255, 18, 54, 0.424);
     box-shadow: 2px 19px 6px -6px rgba(4, 0, 29, 0.86);
+
+    &:hover {
+      border: 1px solid white;
+    }
   }
 `;

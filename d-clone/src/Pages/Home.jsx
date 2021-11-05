@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar, Slider } from "../Components";
+import { NavBar, Slider, VideoSHow } from "../Components";
 import styled from "styled-components";
 import background from "../images/home-background.png";
 
@@ -8,6 +8,7 @@ function Home() {
     <Wrapper>
       <NavBar />
       <Slider />
+      <VideoSHow />
     </Wrapper>
   );
 }
