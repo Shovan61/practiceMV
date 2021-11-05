@@ -7,6 +7,7 @@ import series from "../images/series-icon.svg";
 import original from "../images/original-icon.svg";
 import search from "../images/search-icon.svg";
 import watchlist from "../images/watchlist-icon.svg";
+import mine from "../images/mine.jpg";
 
 function NavBar() {
   return (
@@ -40,6 +41,9 @@ function NavBar() {
           <span>series</span>
         </Navcontent>
       </Navmenu>
+      <Profile>
+        <img src={mine} alt="mine" />
+      </Profile>
     </Wrapper>
   );
 }
@@ -53,32 +57,45 @@ const Wrapper = styled.div`
   grid-template-columns: 200px auto 200px;
   background-color: #040714;
 `;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 9vh;
   & img {
-    height: 50%;
+    height: 50px;
   }
 `;
 const Navmenu = styled.div`
-  height: 100%;
+  height: 9vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 `;
 const Navcontent = styled.div`
   margin-top: 0.8rem;
-  height: 100%;
+  height: 9vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
   & img {
-    height: 20%;
+    height: 22%;
   }
   & span {
-    font-size: 14px;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+`;
+
+const Profile = styled.div`
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    border-radius: 50%;
+    height: 50%;
   }
 `;
