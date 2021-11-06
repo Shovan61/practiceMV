@@ -8,7 +8,7 @@ function VideoBox(props) {
 
   useEffect(() => {
     if (isHover) {
-      videoRef.current.play();
+      return videoRef.current.play();
     } else {
       videoRef.current.pause();
     }
@@ -16,11 +16,11 @@ function VideoBox(props) {
 
   return (
     <Box
-      onMouseOver={() => setisHover(true)}
+      onMouseEnter={() => setisHover(true)}
       onMouseLeave={() => setisHover(false)}
     >
       <img src={image} alt="img" />
-      <video ref={videoRef} src={video} loop></video>
+      <video ref={videoRef} src={video} loop muted={true}></video>
     </Box>
   );
 }
@@ -37,8 +37,9 @@ const Box = styled.div`
   border: 0.5px solid #777;
   -webkit-box-shadow: 2px 9px 23px 2px #000000;
   box-shadow: 2px 9px 23px 2px #000000;
-  transition: all 0.3s ease-in;
+
   &:hover {
+    border: none;
     & video {
       display: block;
     }
