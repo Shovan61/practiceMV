@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import background from "../images/login-background.jpg";
 import imgOne from "../images/cta-logo-one.svg";
 import imgTwo from "../images/cta-logo-two.png";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../Firebase/init-firebase";
+
+const loginWithGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider);
+};
 
 function LogInPage() {
+  const handleClick = () => {
+    loginWithGoogle()
+      .then((result) => console.log(result))
+      .catch((err) => alert(err));
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -23,7 +36,7 @@ function LogInPage() {
         </SecondImage>
       </Content>
 
-      <Login>LOG IN</Login>
+      <Login onClick={handleClick}>LOG IN</Login>
     </Wrapper>
   );
 }

@@ -30,7 +30,6 @@ export default VideoBox;
 const Box = styled.div`
   width: 60%;
   height: 60%;
-  cursor: pointer;
   border-radius: 7px;
   position: relative;
   overflow: hidden;
