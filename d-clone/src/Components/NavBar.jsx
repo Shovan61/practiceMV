@@ -8,8 +8,11 @@ import original from "../images/original-icon.svg";
 import search from "../images/search-icon.svg";
 import watchlist from "../images/watchlist-icon.svg";
 import mine from "../images/mine.jpg";
+import { useSelector, useDispatch } from "react-redux";
 
 function NavBar() {
+  const user = useSelector((state) => state);
+  console.log(user);
   return (
     <Wrapper>
       <Logo>
