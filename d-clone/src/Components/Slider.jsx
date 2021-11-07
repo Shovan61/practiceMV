@@ -48,7 +48,7 @@ const Container = styled.div`
     box-shadow: 2px 19px 6px -6px rgba(4, 0, 29, 0.86);
 
     &:hover {
-      border: 1px solid white;
+      /* border: 1px solid white; */
     }
   }
 `;

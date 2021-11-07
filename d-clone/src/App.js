@@ -9,6 +9,10 @@ import { signInUser, signOutUser } from "./features/userSlice";
 function App() {
   const dispatch = useDispatch();
 
+  //  get movies
+  useEffect(() => {}, []);
+
+  // get user
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
