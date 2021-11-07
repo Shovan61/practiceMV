@@ -7,7 +7,6 @@ import series from "../images/series-icon.svg";
 import original from "../images/original-icon.svg";
 import search from "../images/search-icon.svg";
 import watchlist from "../images/watchlist-icon.svg";
-import mine from "../images/mine.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { signOutUser } from "../features/userSlice";
 import { signOut } from "firebase/auth";
@@ -18,8 +17,6 @@ function NavBar() {
   const user = useSelector((state) => state);
   const dispatch = useDispatch();
   let history = useHistory();
-
-  console.log(user);
 
   const handleClick = () => {
     signOut(auth);
