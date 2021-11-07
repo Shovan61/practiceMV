@@ -19,6 +19,8 @@ function NavBar() {
   const dispatch = useDispatch();
   let history = useHistory();
 
+  console.log(user);
+
   const handleClick = () => {
     signOut(auth);
     const userInfo = {
@@ -63,7 +65,7 @@ function NavBar() {
         </Navcontent>
       </Navmenu>
       <Profile>
-        <img src={mine} alt="mine" />
+        <img src={user.user.photo} alt="mine" />
         <Button onClick={handleClick}>LOG OUT</Button>
       </Profile>
     </Wrapper>
@@ -73,7 +75,7 @@ function NavBar() {
 export default NavBar;
 
 const Wrapper = styled.div`
-  height: 9vh;
+  height: 10vh;
   width: 100%;
   display: grid;
   grid-template-columns: 200px auto 200px;
@@ -84,20 +86,20 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 9vh;
+  height: 10vh;
   & img {
     height: 50px;
   }
 `;
 const Navmenu = styled.div`
-  height: 9vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 `;
 const Navcontent = styled.div`
   margin-top: 0.8rem;
-  height: 9vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -112,7 +114,7 @@ const Navcontent = styled.div`
 `;
 
 const Profile = styled.div`
-  height: 9vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;

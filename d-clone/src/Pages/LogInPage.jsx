@@ -31,8 +31,6 @@ function LogInPage() {
       .catch((err) => alert(err));
   };
 
-  console.log(user);
-
   return (
     <Wrapper>
       <Content>

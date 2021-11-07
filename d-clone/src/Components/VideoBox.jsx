@@ -33,7 +33,7 @@ const Box = styled.div`
   border-radius: 7px;
   position: relative;
   overflow: hidden;
-  border: 0.5px solid #777;
+  border: 2px solid #222;
   -webkit-box-shadow: 2px 9px 23px 2px #000000;
   box-shadow: 2px 9px 23px 2px #000000;
 
