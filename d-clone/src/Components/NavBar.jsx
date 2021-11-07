@@ -9,10 +9,28 @@ import search from "../images/search-icon.svg";
 import watchlist from "../images/watchlist-icon.svg";
 import mine from "../images/mine.jpg";
 import { useSelector, useDispatch } from "react-redux";
+import { signOutUser } from "../features/userSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../Firebase/init-firebase";
+import { useHistory } from "react-router-dom";
 
 function NavBar() {
   const user = useSelector((state) => state);
-  console.log(user);
+  const dispatch = useDispatch();
+  let history = useHistory();
+
+  const handleClick = () => {
+    signOut(auth);
+    const userInfo = {
+      name: "",
+      email: "",
+      photo: null,
+    };
+
+    dispatch(signOutUser(userInfo));
+    history.push("/");
+  };
+
   return (
     <Wrapper>
       <Logo>
@@ -46,6 +64,7 @@ function NavBar() {
       </Navmenu>
       <Profile>
         <img src={mine} alt="mine" />
+        <Button onClick={handleClick}>LOG OUT</Button>
       </Profile>
     </Wrapper>
   );
@@ -101,5 +120,20 @@ const Profile = styled.div`
     margin-top: 0.5rem;
     border-radius: 50%;
     height: 50%;
+  }
+`;
+
+const Button = styled.div`
+  background-color: #161638c3;
+  margin-left: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0.5px solid white;
+  transition: all 0.05s ease-in;
+  &:hover {
+    background-color: #ddddf5c3;
+    color: black;
+    border: none;
   }
 `;

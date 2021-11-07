@@ -11,6 +11,7 @@ import {
 import { auth } from "../Firebase/init-firebase";
 import { useSelector, useDispatch } from "react-redux";
 import { signInUser, signOutUser } from "../features/userSlice";
+import { useHistory } from "react-router-dom";
 
 const loginWithGoogle = () => {
   const provider = new GoogleAuthProvider();
@@ -19,21 +20,18 @@ const loginWithGoogle = () => {
 
 function LogInPage() {
   const dispatch = useDispatch();
+  let history = useHistory();
   const user = useSelector((state) => state);
-  console.log(user);
 
   const handleClick = () => {
     loginWithGoogle()
       .then((user) => {
-        const userInfo = {
-          name: user.user.displayName,
-          email: user.user.email,
-          photo: user.user.photoURL,
-        };
-        dispatch(signInUser(userInfo));
+        history.push("/home");
       })
       .catch((err) => alert(err));
   };
+
+  console.log(user);
 
   return (
     <Wrapper>
