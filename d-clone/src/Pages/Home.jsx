@@ -3,12 +3,18 @@ import { NavBar, Slider, VideoSHow } from "../Components";
 import styled from "styled-components";
 import background from "../images/home-background.png";
 
+import { MovieCategory } from "../Components";
+
 function Home() {
   return (
     <Wrapper>
       <NavBar />
       <Slider />
       <VideoSHow />
+      <MovieCategory props={{ name: "new" }} />
+      <MovieCategory props={{ name: "recomended" }} />
+      <MovieCategory props={{ name: "trending" }} />
+      <MovieCategory props={{ name: "original" }} />
     </Wrapper>
   );
 }
