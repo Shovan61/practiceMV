@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 function MovieBox(props) {
-  console.log(props);
-  const { id, titleImg, backgroundImg } = props;
+  let history = useHistory();
+  const { id, titleImg, cardImg } = props;
+
+  const gotoMovie = () => {
+    history.push(`/movies/${id}`);
+  };
 
   return (
-    <Wrapper>
-      <img src={backgroundImg} alt={id} />
+    <Wrapper onClick={gotoMovie}>
+      <img src={cardImg} alt={id} />
     </Wrapper>
   );
 }

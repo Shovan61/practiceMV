@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home, LogInPage, PrivateRoute, PrivateRouteLogin } from "./Pages";
+import {
+  Home,
+  LogInPage,
+  PrivateRoute,
+  PrivateRouteLogin,
+  MovieDetailesPage,
+} from "./Pages";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./Firebase/init-firebase";
 import { useDispatch } from "react-redux";
@@ -73,6 +79,9 @@ function App() {
         <PrivateRoute exact path="/home">
           <Home />
         </PrivateRoute>
+        <Route exact path="/movies/:id">
+          <MovieDetailesPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

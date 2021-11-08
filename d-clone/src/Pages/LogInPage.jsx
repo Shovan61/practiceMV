@@ -3,14 +3,10 @@ import styled from "styled-components";
 import background from "../images/login-background.jpg";
 import imgOne from "../images/cta-logo-one.svg";
 import imgTwo from "../images/cta-logo-two.png";
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../Firebase/init-firebase";
-import { useSelector, useDispatch } from "react-redux";
-import { signInUser, signOutUser } from "../features/userSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { signInUser, signOutUser } from "../features/userSlice";
 import { useHistory } from "react-router-dom";
 
 const loginWithGoogle = () => {
@@ -19,9 +15,9 @@ const loginWithGoogle = () => {
 };
 
 function LogInPage() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   let history = useHistory();
-  const user = useSelector((state) => state);
+  // const user = useSelector((state) => state);
 
   const handleClick = () => {
     loginWithGoogle()

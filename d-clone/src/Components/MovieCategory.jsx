@@ -53,4 +53,5 @@ const Container = styled.div`
   gap: 5px;
   justify-items: center;
   align-items: center;
+  margin-bottom: 3rem;
 `;

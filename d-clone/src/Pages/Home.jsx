@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar, Slider, VideoSHow } from "../Components";
+import { NavBar, Slider, VideoSHow, Footer } from "../Components";
 import styled from "styled-components";
 import background from "../images/home-background.png";
 
@@ -15,6 +15,7 @@ function Home() {
       <MovieCategory props={{ name: "recomended" }} />
       <MovieCategory props={{ name: "trending" }} />
       <MovieCategory props={{ name: "original" }} />
+      <Footer />
     </Wrapper>
   );
 }
